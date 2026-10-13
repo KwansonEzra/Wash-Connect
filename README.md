@@ -41,11 +41,6 @@ Edit `.env` and set at minimum:
 - `MONGO_URI` — your MongoDB connection string
 - `JWT_SECRET` — any long random string
 
-The app is unusable with a totally empty database (no states/locations
-means no one can register an LSP or search for one, and there's no way to
-create an admin account through the public UI by design — see
-**Security note** below). Seed baseline data and your first admin account:
-
 ```bash
 npm run seed            # states, locations, and a starter service catalog
 npm run seed:admin      # also creates an admin user from ADMIN_EMAIL / ADMIN_PASSWORD in .env
