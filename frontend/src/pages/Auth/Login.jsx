@@ -26,8 +26,8 @@ const Login = () => {
     try {
       const user = await login({ email, password }).unwrap();
       dispatch(setCredentials(user));
-      toast.success(`Welcome back, ${user.username}!`);
-      navigate(redirectTo, { replace: true });
+      // toast.success('Account created! Welcome to WashConnect.');
+      navigate(user.role === 'lsp' ? '/lsp/profile' : '/home', { replace: true });
     } catch (err) {
       setFormError(err?.data?.message || 'Invalid email or password. Please try again.');
     }
