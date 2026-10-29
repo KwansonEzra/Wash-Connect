@@ -35,7 +35,7 @@ const Register = () => {
     try {
       const user = await register({ username, email, password, role }).unwrap();
       dispatch(setCredentials(user));
-      toast.success('Account created! Welcome to WashConnect.');
+      // toast.success('Account created! Welcome to WashConnect.');
 
       // Send LSP users straight to creating their shop profile
       navigate(user.role === 'lsp' ? '/lsp/profile' : '/home', { replace: true });
